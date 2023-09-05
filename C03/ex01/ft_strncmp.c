@@ -6,27 +6,9 @@
 /*   By: engoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 10:53:47 by engoncal          #+#    #+#             */
-/*   Updated: 2023/08/29 13:08:55 by engoncal         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:10:42 by engoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include<stdio.h>
-
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	int nb;
-	nb = 1;
-	while(*s1++, *s2++)
-	{
-		if(*s1 == '\0' && *s2 == '\0' || nb == n-1)
-			return 0;
-		nb++;
-	}
-	return (*--s1 - *--s2);
-}#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-
 
 int     ft_strncmp(char *s1, char *s2, unsigned int n)
 {
@@ -36,9 +18,9 @@ int     ft_strncmp(char *s1, char *s2, unsigned int n)
         {
                 if(nb == n || (*s1 == '\0' && *s2 == '\0'))
                 return 0;
+                nb++;
         }
         return (*--s1 - *--s2);
-
 }
 
 
@@ -61,4 +43,4 @@ int     ft_strncmp(char *s1, char *s2, unsigned int n)
 	printf("%d, %d\n", ft_strncmp(s5, s5, 5), strncmp(s5, s5, 5));
 	printf("%d, %d\n", ft_strncmp(s5, s7, 7), strncmp(s5, s7, 7));
 	printf("%d, %d\n", ft_strncmp(s5, s7, 8), strncmp(s5, s7, 8));
-/*}
+}*/

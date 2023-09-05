@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 19:01:43 by engoncal          #+#    #+#             */
-/*   Updated: 2023/08/25 10:54:20 by engoncal         ###   ########.fr       */
+/*   Created: 2023/09/05 13:49:32 by engoncal          #+#    #+#             */
+/*   Updated: 2023/09/05 14:33:46 by engoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-void	ft_ultimate_div_mod(int *a, int *b)
+#include <unistd.h>
+
+int	ft_strlen(char *str)
 {
-	int	*c;
+	int i;
 
-	*c = *a;
-	*a = *a / *b;
-	*b = *c / *b;
+	i = 0;
+	while(str[i] != '\0')
+	{
+		i++;
+	}
+	return i;
+}
+
+int	main(int argc, char **argv)
+{
+	int i;
+
+	i = 1;
+	while(i != argc)
+	{
+		write(1, argv[i],ft_strlen(argv[i]));
+		i++;
+	}
 }

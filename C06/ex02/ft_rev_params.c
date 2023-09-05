@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 18:04:04 by engoncal          #+#    #+#             */
-/*   Updated: 2023/08/30 09:49:13 by engoncal         ###   ########.fr       */
+/*   Created: 2023/09/05 14:39:38 by engoncal          #+#    #+#             */
+/*   Updated: 2023/09/05 15:09:06 by engoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void    ft_ultimate_ft(int *********nbr)
+#include<unistd.h>
+
+int 	ft_strlen(char *str)
 {
-        *********nbr = 42;
+	int i;
+
+	i = 0;
+	while(str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
-/*int		main(void)
+int	main(int argc, char **argv)
 {
-	int a, *b, **c, ***d, ****e, *****f, ******g, *******h, ********i, *********j;
-
-
-	j = &i;
-	i = &h;
-	h = &g;
-	g = &f;
-	f = &e;
-	e = &d;
-	d = &c;
-	c = &b;
-	b = &a;
-
-	ft_ultimate_ft(j);
-	if (a == 42)
+	int i;
+	int stop;
+	
+	i = argc-1;
+	while(i > 0)
 	{
-		write(1, "OK\n", 3);
+		write(1, argv[i], ft_strlen(argv[i]));
+		i--;
 	}
-	else
-	{
-		write(1, "FAIL\n", 5);
-	}
-}*/
+
+}

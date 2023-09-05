@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 18:17:46 by engoncal          #+#    #+#             */
-/*   Updated: 2023/08/30 09:52:35 by engoncal         ###   ########.fr       */
+/*   Created: 2023/09/03 17:00:24 by engoncal          #+#    #+#             */
+/*   Updated: 2023/09/03 17:06:56 by engoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-#include <unistd.h>
-
-void    ft_swap(int *a, int *b)
+int	ft_recursive_power(int nb, int power)
 {
-        int     stock;
-
-        stock = *a;
-        *a = *b;
-        *b = stock;
-}
-
-/*int		main(void)
-{
-	int a = 3;
-	int b = 18;
-	ft_swap(&a, &b);
-	if (b == 3 && a == 18)
-	{
-		write(1, "OK\n", 3);
-	}
+	if(power < 0)
+		return 0;
+	else if (power == 0 || power == 1)
+		return 1;
 	else
 	{
-		write(1, "FAIL\n", 5);
+		return power * ft_recursive_power(nb-1, power)
 	}
-}*/
+}

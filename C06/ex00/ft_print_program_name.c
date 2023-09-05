@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engoncal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 09:27:22 by engoncal          #+#    #+#             */
-/*   Updated: 2023/08/25 11:10:56 by engoncal         ###   ########.fr       */
+/*   Created: 2023/09/05 10:38:40 by engoncal          #+#    #+#             */
+/*   Updated: 2023/09/05 14:37:16 by engoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-void	ft_putstr(char *str)
+#include <unistd.h>
+int ft_strlen(char *str)
 {
-	while (*str != '\0')
+	int i;
+	
+	i = 0;
+	while(str[i] != '\0')
 	{
-		write(1, *str, 1);
-		str++;
+		i++;
 	}
+	return i;
+}
+
+int main(int argc, char **argv)
+{
+	write(1,argv[0],ft_strlen(argv[0]));
 }
